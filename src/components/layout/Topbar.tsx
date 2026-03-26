@@ -60,6 +60,13 @@ export default function Topbar({ userName }: { userName?: string }) {
           {showMenu && (
             <div className="absolute right-0 top-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg py-1 w-48 z-50">
               <Link
+                href="/profil"
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                onClick={() => setShowMenu(false)}
+              >
+                Profil
+              </Link>
+              <Link
                 href="/installningar"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
                 onClick={() => setShowMenu(false)}
