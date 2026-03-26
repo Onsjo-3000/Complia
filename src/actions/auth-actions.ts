@@ -33,8 +33,9 @@ export async function registerAction(formData: FormData) {
 
     return { success: true };
   } catch (e) {
-    console.error("Register error:", e);
-    return { error: "Kunde inte skapa konto. Försök igen." };
+    const message = e instanceof Error ? e.message : String(e);
+    console.error("Register error:", message);
+    return { error: `Kunde inte skapa konto: ${message}` };
   }
 }
 
