@@ -19,18 +19,23 @@ export async function registerAction(formData: FormData) {
     return { error: "Lösenordet måste vara minst 6 tecken." };
   }
 
-  const existing = await prisma.user.findUnique({ where: { email } });
-  if (existing) {
-    return { error: "En användare med denna e-postadress finns redan." };
+  try {
+    const existing = await prisma.user.findUnique({ where: { email } });
+    if (existing) {
+      return { error: "En användare med denna e-postadress finns redan." };
+    }
+
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    await prisma.user.create({
+      data: { email, passwordHash, firmName, phone },
+    });
+
+    return { success: true };
+  } catch (e) {
+    console.error("Register error:", e);
+    return { error: "Kunde inte skapa konto. Försök igen." };
   }
-
-  const passwordHash = await bcrypt.hash(password, 10);
-
-  await prisma.user.create({
-    data: { email, passwordHash, firmName, phone },
-  });
-
-  return { success: true };
 }
 
 export async function loginAction(formData: FormData) {

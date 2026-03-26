@@ -16,13 +16,20 @@ export default function RegisterPage() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
-    const result = await registerAction(formData);
+    try {
+      const result = await registerAction(formData);
 
-    if (result?.error) {
-      setError(result.error);
+      if (result?.error) {
+        setError(result.error);
+        setLoading(false);
+      } else if (result?.success) {
+        router.push("/logga-in?registered=1");
+      } else {
+        setLoading(false);
+      }
+    } catch {
+      setError("Något gick fel. Försök igen.");
       setLoading(false);
-    } else if (result?.success) {
-      router.push("/logga-in?registered=1");
     }
   }
 
