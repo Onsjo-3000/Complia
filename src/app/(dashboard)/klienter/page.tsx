@@ -22,10 +22,10 @@ export default async function ClientsPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Klienter</h1>
+        <h1 className="text-2xl font-bold text-gray-900 font-serif">Klienter</h1>
         <Link
           href="/klienter/ny"
-          className="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-800 transition-colors"
+          className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
         >
           + Ny klient
         </Link>
@@ -36,7 +36,7 @@ export default async function ClientsPage() {
           <p className="text-gray-500">Inga klienter ännu.</p>
           <Link
             href="/klienter/ny"
-            className="text-blue-700 hover:underline text-sm mt-2 inline-block"
+            className="text-black hover:underline text-sm mt-2 inline-block"
           >
             Lägg till din första klient
           </Link>
@@ -59,7 +59,7 @@ export default async function ClientsPage() {
                   <td className="p-4">
                     <Link
                       href={`/klienter/${client.id}`}
-                      className="text-sm font-medium text-blue-700 hover:underline"
+                      className="text-sm font-medium text-black hover:underline"
                     >
                       {client.name}
                     </Link>
@@ -74,7 +74,7 @@ export default async function ClientsPage() {
                   </td>
                   <td className="p-4">
                     {client._count.matches > 0 ? (
-                      <span className="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded-full">
+                      <span className="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded-full">
                         {client._count.matches}
                       </span>
                     ) : (

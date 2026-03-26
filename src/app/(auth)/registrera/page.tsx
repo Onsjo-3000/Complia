@@ -27,8 +27,8 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8">
-      <h2 className="text-xl font-semibold text-gray-900 mb-6">Registrera byrå</h2>
+    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <h2 className="text-xl font-semibold text-black mb-6 font-serif">Registrera byrå</h2>
 
       {error && (
         <div className="bg-red-50 text-red-700 p-3 rounded-lg mb-4 text-sm">
@@ -46,7 +46,7 @@ export default function RegisterPage() {
             id="firmName"
             name="firmName"
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
             placeholder="Advokatbyrån AB"
           />
         </div>
@@ -60,7 +60,7 @@ export default function RegisterPage() {
             id="email"
             name="email"
             required
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
             placeholder="namn@byrå.se"
           />
         </div>
@@ -73,7 +73,7 @@ export default function RegisterPage() {
             type="tel"
             id="phone"
             name="phone"
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
             placeholder="08-123 456"
           />
         </div>
@@ -88,22 +88,22 @@ export default function RegisterPage() {
             name="password"
             required
             minLength={6}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
           />
         </div>
 
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-700 text-white py-2.5 rounded-lg font-medium hover:bg-blue-800 disabled:opacity-50 transition-colors"
+          className="w-full bg-black text-white py-2.5 rounded-lg font-medium hover:bg-gray-800 disabled:opacity-50 transition-colors"
         >
           {loading ? "Registrerar..." : "Skapa konto"}
         </button>
       </form>
 
-      <p className="text-center text-sm text-gray-600 mt-6">
+      <p className="text-center text-sm text-gray-500 mt-6">
         Har du redan ett konto?{" "}
-        <Link href="/logga-in" className="text-blue-700 font-medium hover:underline">
+        <Link href="/logga-in" className="text-black font-medium hover:underline">
           Logga in
         </Link>
       </p>

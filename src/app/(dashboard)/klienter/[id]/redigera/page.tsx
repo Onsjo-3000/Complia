@@ -34,7 +34,7 @@ export default async function EditClientPage({
         <span className="text-gray-900">Redigera</span>
       </div>
 
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">
+      <h1 className="text-2xl font-bold text-gray-900 mb-6 font-serif">
         Redigera {client.name}
       </h1>
 

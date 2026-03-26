@@ -18,7 +18,7 @@ export default async function NotificationsPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Notiser</h1>
+        <h1 className="text-2xl font-bold text-gray-900 font-serif">Notiser</h1>
         {unreadCount > 0 && <MarkAllReadButton />}
       </div>
 
@@ -32,12 +32,12 @@ export default async function NotificationsPage() {
             <div
               key={notification.id}
               className={`p-4 flex items-start gap-3 ${
-                !notification.read ? "bg-blue-50/50" : ""
+                !notification.read ? "bg-gray-50" : ""
               }`}
             >
               <div
                 className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                  !notification.read ? "bg-blue-500" : "bg-transparent"
+                  !notification.read ? "bg-black" : "bg-transparent"
                 }`}
               />
               <div className="flex-1 min-w-0">
@@ -58,7 +58,7 @@ export default async function NotificationsPage() {
                   {notification.linkUrl && (
                     <Link
                       href={notification.linkUrl}
-                      className="text-xs text-blue-700 hover:underline"
+                      className="text-xs text-black hover:underline"
                     >
                       Visa
                     </Link>

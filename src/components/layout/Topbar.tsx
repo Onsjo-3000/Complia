@@ -26,7 +26,7 @@ export default function Topbar({ userName }: { userName?: string }) {
   return (
     <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6">
       <div className="md:hidden">
-        <h1 className="text-lg font-bold text-blue-900">Complia</h1>
+        <h1 className="text-lg font-bold text-black font-serif">Complia</h1>
       </div>
 
       <div className="flex-1" />
@@ -51,7 +51,7 @@ export default function Topbar({ userName }: { userName?: string }) {
             onClick={() => setShowMenu(!showMenu)}
             className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900"
           >
-            <div className="w-8 h-8 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-semibold text-sm">
+            <div className="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center font-semibold text-sm">
               {userName?.charAt(0)?.toUpperCase() || "?"}
             </div>
             <span className="hidden sm:inline font-medium">{userName}</span>

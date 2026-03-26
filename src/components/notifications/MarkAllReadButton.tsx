@@ -6,7 +6,7 @@ export default function MarkAllReadButton() {
   return (
     <button
       onClick={() => markAllNotificationsReadAction()}
-      className="text-sm text-blue-700 hover:underline"
+      className="text-sm text-black hover:underline"
     >
       Markera alla som lästa
     </button>

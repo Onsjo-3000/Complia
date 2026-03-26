@@ -39,7 +39,7 @@ export default async function LawDetailPage({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Laginfo */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h1 className="text-xl font-bold text-gray-900 mb-2">
+          <h1 className="text-xl font-bold text-gray-900 mb-2 font-serif">
             {law.designation}
           </h1>
           <h2 className="text-sm text-gray-700 mb-4">{law.title}</h2>
@@ -69,7 +69,7 @@ export default async function LawDetailPage({
                   href={law.documentUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-blue-700 hover:underline"
+                  className="text-sm text-black hover:underline"
                 >
                   Visa på Riksdagen.se
                 </a>
@@ -97,7 +97,7 @@ export default async function LawDetailPage({
                     <div>
                       <Link
                         href={`/klienter/${match.client.id}`}
-                        className="text-sm font-medium text-blue-700 hover:underline"
+                        className="text-sm font-medium text-black hover:underline"
                       >
                         {match.client.name}
                       </Link>
@@ -118,7 +118,7 @@ export default async function LawDetailPage({
                             ? "bg-red-100 text-red-700"
                             : match.recommendation === "bevaka"
                             ? "bg-yellow-100 text-yellow-700"
-                            : "bg-blue-100 text-blue-700"
+                            : "bg-gray-200 text-gray-700"
                         }`}
                       >
                         {match.recommendation}

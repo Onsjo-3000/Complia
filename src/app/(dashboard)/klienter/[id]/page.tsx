@@ -36,7 +36,7 @@ export default async function ClientDetailPage({
       </div>
 
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">{client.name}</h1>
+        <h1 className="text-2xl font-bold text-gray-900 font-serif">{client.name}</h1>
         <Link
           href={`/klienter/${client.id}/redigera`}
           className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors"
@@ -121,7 +121,7 @@ export default async function ClientDetailPage({
                     <div>
                       <Link
                         href={`/lagar/${match.law.id}`}
-                        className="text-sm font-medium text-blue-700 hover:underline"
+                        className="text-sm font-medium text-black hover:underline"
                       >
                         {match.law.designation} - {match.law.title}
                       </Link>
@@ -138,7 +138,7 @@ export default async function ClientDetailPage({
                           ? "bg-red-100 text-red-700"
                           : match.recommendation === "bevaka"
                           ? "bg-yellow-100 text-yellow-700"
-                          : "bg-blue-100 text-blue-700"
+                          : "bg-gray-200 text-gray-700"
                       }`}
                     >
                       {match.recommendation}

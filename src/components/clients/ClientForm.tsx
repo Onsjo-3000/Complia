@@ -59,7 +59,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
             name="name"
             required
             defaultValue={initialData?.name}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
           />
         </div>
 
@@ -71,7 +71,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
             type="text"
             name="organizationNr"
             defaultValue={initialData?.organizationNr || ""}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
             placeholder="XXXXXX-XXXX"
           />
         </div>
@@ -85,7 +85,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
           name="industry"
           required
           defaultValue={initialData?.industry || ""}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
         >
           <option value="">Välj bransch...</option>
           {INDUSTRIES.map((i) => (
@@ -111,7 +111,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
                 name="legalAreas"
                 value={area.value}
                 defaultChecked={selectedAreas.includes(area.value)}
-                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                className="rounded border-gray-300 text-black focus:ring-black"
               />
               {area.label}
             </label>
@@ -128,7 +128,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
             type="text"
             name="contactPerson"
             defaultValue={initialData?.contactPerson || ""}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
           />
         </div>
 
@@ -140,7 +140,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
             type="email"
             name="contactEmail"
             defaultValue={initialData?.contactEmail || ""}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
           />
         </div>
       </div>
@@ -153,7 +153,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
           name="notes"
           rows={3}
           defaultValue={initialData?.notes || ""}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black outline-none"
         />
       </div>
 
@@ -172,7 +172,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
                 const hidden = e.target.previousSibling as HTMLInputElement;
                 hidden.value = e.target.checked ? "true" : "false";
               }}
-              className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              className="rounded border-gray-300 text-black focus:ring-black"
             />
             Aktiv klient
           </label>
@@ -182,7 +182,7 @@ export default function ClientForm({ action, initialData }: ClientFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-800 disabled:opacity-50 transition-colors"
+        className="bg-black text-white px-6 py-2.5 rounded-lg font-medium hover:bg-gray-800 disabled:opacity-50 transition-colors"
       >
         {loading ? "Sparar..." : initialData ? "Uppdatera" : "Skapa klient"}
       </button>

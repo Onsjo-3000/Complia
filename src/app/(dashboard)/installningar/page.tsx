@@ -36,7 +36,7 @@ export default function SettingsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Inställningar</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Inställningar</h1>
 
       <div className="space-y-6">
         <div className="bg-white rounded-xl border border-gray-200 p-6">
@@ -48,7 +48,7 @@ export default function SettingsPage() {
           <button
             onClick={triggerFetch}
             disabled={fetching}
-            className="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-800 disabled:opacity-50 transition-colors"
+            className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 disabled:opacity-50 transition-colors"
           >
             {fetching ? "Hämtar..." : "Hämta nya lagar"}
           </button>

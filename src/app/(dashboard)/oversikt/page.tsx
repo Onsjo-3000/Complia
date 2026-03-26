@@ -36,7 +36,7 @@ export default async function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Översikt</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Översikt</h1>
 
       {/* Statistikkort */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -50,7 +50,7 @@ export default async function DashboardPage() {
         </div>
         <div className="bg-white rounded-xl p-6 border border-gray-200">
           <p className="text-sm text-gray-500">Ohanterade matchningar</p>
-          <p className="text-3xl font-bold text-blue-700 mt-1">{matchCount}</p>
+          <p className="text-3xl font-bold text-black mt-1">{matchCount}</p>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ export default async function DashboardPage() {
         <div className="bg-white rounded-xl border border-gray-200">
           <div className="flex items-center justify-between p-4 border-b border-gray-100">
             <h2 className="font-semibold text-gray-900">Senaste lagar</h2>
-            <Link href="/lagar" className="text-sm text-blue-700 hover:underline">
+            <Link href="/lagar" className="text-sm text-black hover:underline">
               Visa alla
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default async function DashboardPage() {
         <div className="bg-white rounded-xl border border-gray-200">
           <div className="flex items-center justify-between p-4 border-b border-gray-100">
             <h2 className="font-semibold text-gray-900">Brådskande matchningar</h2>
-            <Link href="/matchningar" className="text-sm text-blue-700 hover:underline">
+            <Link href="/matchningar" className="text-sm text-black hover:underline">
               Visa alla
             </Link>
           </div>
@@ -121,7 +121,7 @@ export default async function DashboardPage() {
                           ? "bg-red-100 text-red-700"
                           : match.recommendation === "bevaka"
                           ? "bg-yellow-100 text-yellow-700"
-                          : "bg-blue-100 text-blue-700"
+                          : "bg-gray-200 text-gray-700"
                       }`}
                     >
                       {match.recommendation}

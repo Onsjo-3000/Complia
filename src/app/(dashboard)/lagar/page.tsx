@@ -11,7 +11,7 @@ export default async function LawsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Lagar</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Lagar</h1>
 
       {laws.length === 0 ? (
         <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
@@ -38,7 +38,7 @@ export default async function LawsPage() {
                   <td className="p-4">
                     <Link
                       href={`/lagar/${law.id}`}
-                      className="text-sm font-medium text-blue-700 hover:underline"
+                      className="text-sm font-medium text-black hover:underline"
                     >
                       {law.designation}
                     </Link>
@@ -54,7 +54,7 @@ export default async function LawsPage() {
                   </td>
                   <td className="p-4">
                     {law._count.matches > 0 ? (
-                      <span className="bg-blue-100 text-blue-700 text-xs font-medium px-2 py-1 rounded-full">
+                      <span className="bg-gray-200 text-gray-700 text-xs font-medium px-2 py-1 rounded-full">
                         {law._count.matches}
                       </span>
                     ) : (

@@ -22,7 +22,7 @@ export default async function MatchesPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Matchningar</h1>
+      <h1 className="text-2xl font-bold text-gray-900 mb-6 font-serif">Matchningar</h1>
 
       {matches.length === 0 ? (
         <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
@@ -63,7 +63,7 @@ export default async function MatchesPage() {
                               ? "bg-red-100 text-red-700"
                               : match.recommendation === "bevaka"
                               ? "bg-yellow-100 text-yellow-700"
-                              : "bg-blue-100 text-blue-700"
+                              : "bg-gray-200 text-gray-700"
                           }`}
                         >
                           {match.recommendation}
