@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String
+  firmName      String
+  phone         String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  clients       Client[]
+  notifications Notification[]
+}
+
+model Client {
+  id             String     @id @default(cuid())
+  userId         String
+  user           User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name           String
+  organizationNr String?
+  industry       String
+  legalAreas     String
+  contactEmail   String?
+  contactPerson  String?
+  notes          String?
+  active         Boolean    @default(true)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+  matches        LawMatch[]
+}
+
+model Law {
+  id            String     @id @default(cuid())
+  riksdagenId   String     @unique
+  designation   String
+  title         String
+  summary       String?
+  category      String?
+  documentUrl   String?
+  publishedDate DateTime
+  fetchedAt     DateTime   @default(now())
+  matches       LawMatch[]
+}
+
+model LawMatch {
+  id              String   @id @default(cuid())
+  lawId           String
+  law             Law      @relation(fields: [lawId], references: [id])
+  clientId        String
+  client          Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  relevanceScore  Int
+  matchReason     String
+  recommendation  String
+  contacted       Boolean  @default(false)
+  dismissed       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  message   String
+  type      String
+  read      Boolean  @default(false)
+  linkUrl   String?
+  createdAt DateTime @default(now())
+}
+
+model FetchLog {
+  id             String   @id @default(cuid())
+  fetchedAt      DateTime @default(now())
+  lawsFound      Int
+  matchesCreated Int
+  status         String
+  errorMessage   String?
+}
