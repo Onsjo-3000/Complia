@@ -8,7 +8,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "LagBevakning",
+  title: "Complia",
   description: "Bevaka lagar. Skydda kunder.",
 };
 

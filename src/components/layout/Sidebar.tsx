@@ -18,7 +18,7 @@ export default function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 min-h-screen hidden md:block">
       <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-blue-900">LagBevakning</h1>
+        <h1 className="text-xl font-bold text-blue-900">Complia</h1>
         <p className="text-xs text-blue-600 mt-0.5">Bevaka lagar. Skydda kunder.</p>
       </div>
       <nav className="p-4 space-y-1">

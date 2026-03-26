@@ -45,7 +45,7 @@ export async function sendMatchDigest(
 
   const html = `
     <div style="font-family: sans-serif; max-width: 800px; margin: 0 auto;">
-      <h2 style="color: #1e40af;">LagBevakning - Nya matchningar</h2>
+      <h2 style="color: #1e40af;">Complia - Nya matchningar</h2>
       <p>Hej ${firmName},</p>
       <p>Vi har hittat <strong>${matches.length}</strong> nya matchningar mellan nyligen publicerade lagar och era kunder:</p>
       <table style="border-collapse: collapse; width: 100%; margin: 16px 0;">
@@ -62,15 +62,15 @@ export async function sendMatchDigest(
           ${matchRows}
         </tbody>
       </table>
-      <p>Logga in på <a href="${process.env.NEXTAUTH_URL}">LagBevakning</a> för att hantera matchningarna.</p>
-      <p style="color: #666; font-size: 12px;">Detta är ett automatiskt meddelande från LagBevakning.</p>
+      <p>Logga in på <a href="${process.env.NEXTAUTH_URL}">Complia</a> för att hantera matchningarna.</p>
+      <p style="color: #666; font-size: 12px;">Detta är ett automatiskt meddelande från Complia.</p>
     </div>
   `;
 
   await transporter.sendMail({
-    from: process.env.EMAIL_FROM || "noreply@lagbevakning.se",
+    from: process.env.EMAIL_FROM || "noreply@complia.se",
     to,
-    subject: `LagBevakning: ${matches.length} nya matchningar`,
+    subject: `Complia: ${matches.length} nya matchningar`,
     html,
   });
 }

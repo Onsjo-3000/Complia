@@ -26,7 +26,7 @@ export default function Topbar({ userName }: { userName?: string }) {
   return (
     <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6">
       <div className="md:hidden">
-        <h1 className="text-lg font-bold text-blue-900">LagBevakning</h1>
+        <h1 className="text-lg font-bold text-blue-900">Complia</h1>
       </div>
 
       <div className="flex-1" />
